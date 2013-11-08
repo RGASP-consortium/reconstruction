@@ -12,7 +12,7 @@ Installation:
 	- bash must be available
 	- awk must be installed and in the path
 
-Usage: java -Xms1G -Xmx2G org.rgasp.RGASP_analyzer
+Usage: java -Xms1G -Xmx2G org.rgasp.PredictionAnalyser
 	-l, --level			... one of "cds", "exon", "both"
 	
 							if "cds" is specified, only cds records within the annotation and
