@@ -1,5 +1,5 @@
 2013, July 4th
-RGASP_analyzer version 0.1
+RGASP_analyzer
 (developed for RGASP, for details see: http://www.gencodegenes.org/rgasp/)
 
 This small program can be used to compare an automatically generated gtf file with a
@@ -8,10 +8,11 @@ within the annotation and the prediction and how many of the predicted features 
 
 Installation:
 	- make sure Java 1.5 or newer is installed
+	- jargs.jar must be on the Java classpath
 	- bash must be available
 	- awk must be installed and in the path
 
-Usage: java -Xms1G -Xmx2G -jar RGASP_analyzer.jar 
+Usage: java -Xms1G -Xmx2G org.rgasp.RGASP_analyzer
 	-l, --level			... one of "cds", "exon", "both"
 	
 							if "cds" is specified, only cds records within the annotation and
