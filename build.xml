@@ -1,0 +1,29 @@
+<project name="Junction Site Identification" basedir=".">
+   <property name="src.dir" value="src"/>
+   <property name="lib.dir" value="lib"/>
+   <property name="build.dir" value="bin"/>
+   <path id="class.path">
+      <fileset dir="${lib.dir}">
+         <include name="**/*.jar"/>
+      </fileset>
+   </path>
+   <target name="clean">
+      <deltree dir="${build.dir}"/>
+   </target>
+   <target name="prepare" depends="clean">
+      <mkdir dir="${build.dir}"/>
+   </target>
+   <target name="compile" depends="prepare">
+      <javac target="1.5" srcdir="${src.dir}" destdir="${build.dir}">
+         <classpath refid="class.path"/>
+      </javac>
+   </target>
+   <target name="run" depends="compile">
+      <java classname="tools.Mapper">
+         <classpath>
+            <path refid="class.path"/>
+            <pathelement location="${build.dir}"/>
+         </classpath>
+      </java>
+   </target>
+</project>
